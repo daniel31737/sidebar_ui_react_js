@@ -1,0 +1,196 @@
+.main {
+  margin: 0 auto;
+  max-width: 1024px;
+
+  .header {
+    padding: 0 20px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #c2c0c0;
+
+    &__menu {
+      font-size: 30px;
+      color: black;
+      cursor: pointer;
+    }
+  }
+
+  .content {
+    display: flex;
+    height: 100vh;
+
+    .sidebar {
+      width: 300px;
+      flex-shrink: 0;
+      height: 100%;
+      border: 1px solid #c2c0c0;
+      border-top: 0px;
+
+      .sidebar-item {
+        width: 100%;
+
+        .sidebar-title {
+          border-bottom: 1px solid #c2c0c0;
+          padding: 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #ebebeb;
+          }
+
+          span {
+            font-size: 18px;
+          }
+
+          .toggle-btn {
+            display: inline-block;
+            cursor: pointer;
+            transition: transform 0.3s;
+          }
+        }
+
+        .sidebar-content ul li {
+          &:first-child {
+            margin-top: 0px;
+          }
+
+          margin-top: 10px;
+        }
+      }
+
+      .sidebar-item.open .toggle-btn {
+        transform: rotate(180deg) !important;
+      }
+
+      .sidebar-item.open {
+        border-bottom: 1px solid #c2c0c0;
+      }
+    }
+
+    .container {
+      background-color: #ebebeb;
+      width: 100%;
+
+      .dashboard {
+        padding: 20px;
+
+        &__header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 20px;
+
+          h1 {
+            color: #ca2836;
+            font-weight: bold;
+            margin: 0;
+          }
+        }
+
+        &__content {
+          display: flex;
+
+          .ticket {
+            width: 240px;
+            margin-left: 20px;
+
+            &__header {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 8px 16px;
+              background-color: #ca2836;
+              font-size: 24px;
+              color: white;
+
+              i {
+                font-size: 30px;
+              }
+            }
+
+            &__content {
+              display: flex;
+              flex-direction: column;
+              background-color: white;
+              height: 250px;
+              padding: 8px 16px;
+
+              .todo {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 8px 0;
+                font-size: 18px;
+                color: #707070;
+
+                .item-remove {
+                  cursor: pointer;
+                }
+
+                .group-checked {
+                  display: flex;
+                  align-items: center;
+
+                  input[type="checkbox"] {
+                    appearance: none;
+                    margin: 0;
+                    width: 18px;
+                    height: 18px;
+                    border: 1px solid #707070;
+                    cursor: pointer;
+
+                    &:before {
+                      content: "";
+                      transform: scale(0);
+                      transition: 120ms transform ease-in-out;
+                      background-color: #707070;
+                    }
+
+                    &:checked {
+                      background-color: #707070;
+                      transform: scale(1);
+                    }
+                  }
+                }
+              }
+
+              .todo.checked .group-checked span {
+                text-decoration: line-through;
+              }
+            }
+          }
+
+          .ticket:first-child {
+            margin-left: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.input-primary {
+  outline: none;
+  border: 1px solid #9b9b9b;
+  height: 26px;
+  padding: 0 10px;
+}
+
+.btn-primary {
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background-color: #ca2836;
+  height: 30px;
+  padding: 0 10px;
+  color: white;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
